@@ -1,65 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8">
+  <title>Neatida Webamp Player</title>
+  <script src="https://unpkg.com/webamp@1.4.0/built/webamp.min.js"></script>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="ru"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Neatida Player&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://unpkg.com/webamp"&gt;&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #111;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>justify-content: center;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>height: 100vh;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const webamp = new Webamp({</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>initialTracks: [</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>metaData: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>artist: "Неатида",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>title: "Гармония"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>url: "audio/Неатида - Гармония.mp3",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>duration: 240 // в секундах, можно не указывать</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>metaData: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>artist: "Неатида",</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>title: "Как в кино"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>url: "audio/Неатида - Как в кино.mp3"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>],</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>initialSkin: {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>url: "neatida.zip"</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>});</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>webamp.renderWhenReady(document.body);</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+<script>
+  const webamp = new Webamp({
+    initialTracks: [
+      {
+        metaData: {
+          artist: "Неатида",
+          title: "Гармония"
+        },
+        url: "Неатида%20-%20Гармония.mp3"
+      },
+      {
+        metaData: {
+          artist: "Неатида",
+          title: "Как в кино"
+        },
+        url: "Неатида%20-%20Как%20в%20кино.mp3"
+      }
+    ],
+    initialSkin: {
+      url: "neatida.zip"
+    }
+  });
+
+  webamp.renderWhenReady(document.body);
+</script>
+
 </body>
 </html>
