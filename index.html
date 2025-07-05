@@ -2,16 +2,15 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Neatida Webamp Player</title>
-  <script src="https://unpkg.com/webamp"></script>
+  <title>Neatida Winamp Player</title>
+  <script src="https://unpkg.com/webamp@1.5.0/modern/webamp.bundle.min.js"></script>
   <style>
     body {
-      background-color: #1a1a1a;
       margin: 0;
-      padding: 0;
+      background-color: #000;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
   </style>
@@ -22,28 +21,30 @@
   const webamp = new Webamp({
     initialTracks: [
       {
-       //  metaData: {
-       //    artist: "Неатида",
-       //    title: "Гармония"
-      //   },
-      //   url: "garmonia.mp3"
-     //  },
-     //  {
-     //    metaData: {
-      //     artist: "Неатида",
-      //     title: "Как в кино"
-       //  },
-       //  url: "kino.mp3"
+        metaData: {
+          artist: "Неатида",
+          title: "Гармония"
+        },
+        url: "garmonia.mp3"
+      },
+      {
+        metaData: {
+          artist: "Неатида",
+          title: "Как в кино"
+        },
+        url: "kino.mp3"
       }
     ],
     initialSkin: {
-      url: "https://files.catbox.moe/at506e.zip"
+      url: "neatida.wsz"
     }
   });
 
-  webamp.renderWhenReady(document.body).then(() => {
-    console.log("Webamp is ready!");
-  });
+  if (Webamp.browserIsSupported()) {
+    webamp.renderWhenReady(document.body);
+  } else {
+    document.body.innerHTML = "Ваш браузер не поддерживается.";
+  }
 </script>
 
 </body>
