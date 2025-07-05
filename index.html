@@ -6,7 +6,7 @@
   <script src="https://unpkg.com/webamp"></script>
   <style>
     body {
-      background-color: #ffc0cb;
+      background-color: #1a1a1a;
       margin: 0;
       padding: 0;
       display: flex;
@@ -26,14 +26,14 @@
           artist: "Неатида",
           title: "Гармония"
         },
-        url: "Неатида%20-%20Гармония.mp3"
+        url: "Неатида - Гармония.mp3"
       },
       {
         metaData: {
           artist: "Неатида",
           title: "Как в кино"
         },
-        url: "Неатида%20-%20Как%20в%20кино.mp3"
+        url: "Неатида - Как в кино.mp3"
       }
     ],
     initialSkin: {
@@ -41,7 +41,9 @@
     }
   });
 
-  webamp.renderWhenReady(document.body);
+  webamp.renderWhenReady(document.body).then(() => {
+    console.log("Webamp is ready!");
+  });
 </script>
 
 </body>
