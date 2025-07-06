@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Neatida Winamp Player</title>
-  <script src="https://unpkg.com/webamp@1.5.0/modern/webamp.bundle.min.js"></script>
+  <title>Garmonia Player</title>
+  <script type="module">
+    import MediaPlayer from 'https://benwiley4000.github.io/win95-media-player/index.js';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const player = new MediaPlayer();
+      document.body.appendChild(player);
+
+      // Загрузка видео
+      player.openFile(new File([/* пустой blob — заменим позже */], "garmonia.mp4", {
+        type: "video/mp4"
+      }));
+
+      // Автоподключение локального видео
+      const video = document.createElement('video');
+      video.src = "garmonia.mp4";
+      video.crossOrigin = "anonymous";
+      video.preload = "auto";
+      video.style.display = "none";
+      document.body.appendChild(video);
+
+      video.addEventListener('canplay', () => {
+        fetch("garmonia.mp4")
+          .then(res => res.blob())
+          .then(blob => {
+            const file = new File([blob], "garmonia.mp4", { type: "video/mp4" });
+            player.openFile(file);
+          });
+      });
+    });
+  </script>
   <style>
     body {
+      background-color: #008080;
       margin: 0;
-      background-color: #000;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       height: 100vh;
     }
   </style>
 </head>
 <body>
-
-<script>
-  const webamp = new Webamp({
-    initialTracks: [
-      {
-        metaData: {
-          artist: "Неатида",
-          title: "Гармония"
-        },
-        url: "garmonia.mp3"
-      },
-      {
-        metaData: {
-          artist: "Неатида",
-          title: "Как в кино"
-        },
-        url: "kino.mp3"
-      }
-    ],
-    initialSkin: {
-      url: "neatida.wsz"
-    }
-  });
-
-  if (Webamp.browserIsSupported()) {
-    webamp.renderWhenReady(document.body);
-  } else {
-    document.body.innerHTML = "Ваш браузер не поддерживается.";
-  }
-</script>
-
 </body>
 </html>
