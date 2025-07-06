@@ -28,7 +28,11 @@
     const tracks = [
       {
         url: 'garmonia.mp3',
-        metaData: { artist: 'Neatida', title: 'Garmonia' }
+        metaData: { artist: 'Неатида', title: 'Гармония' }
+      },
+      {
+        url: 'devochka.mp3',
+        metaData: { artist: 'Неатида', title: 'Девочка ночь' }
       }
     ];
 
@@ -36,8 +40,7 @@
       initialTracks: tracks,
       initialSkin: {
         url: 'neatida.zip'
-      },
-      layout: "double"
+      }
     });
 
     webamp.renderWhenReady(document.getElementById('app'));
