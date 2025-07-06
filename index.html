@@ -36,20 +36,12 @@
       }
     ];
 
-   const webamp = new Webamp({
-  initialTracks: tracks,
-  initialSkin: {
-    url: 'neatida.zip'
-  },
-  layout: "double", // Большой размер
-  availableSkins: [{ url: "neatida.zip", name: "Neatida" }]
-}).onRender((webamp) => {
-  // Принудительно масштабируем после загрузки
-  const container = document.getElementById('app');
-  container.style.transform = 'scale(2)';
-  container.style.transformOrigin = 'top left';
-  container.style.margin = '100px';
-});
+const webamp = new Webamp({
+      initialTracks: tracks,
+      initialSkin: {
+        url: 'neatida.zip'
+      }
+    });
 
     webamp.renderWhenReady(document.getElementById('app'));
   </script>
