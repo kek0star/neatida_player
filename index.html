@@ -1,49 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Garmonia Player</title>
-  <script type="module">
-    import MediaPlayer from 'https://benwiley4000.github.io/win95-media-player/index.js';
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const player = new MediaPlayer();
-      document.body.appendChild(player);
-
-      // Загрузка видео
-      player.openFile(new File([/* пустой blob — заменим позже */], "garmonia.mp4", {
-        type: "video/mp4"
-      }));
-
-      // Автоподключение локального видео
-      const video = document.createElement('video');
-      video.src = "garmonia.mp4";
-      video.crossOrigin = "anonymous";
-      video.preload = "auto";
-      video.style.display = "none";
-      document.body.appendChild(video);
-
-      video.addEventListener('canplay', () => {
-        fetch("garmonia.mp4")
-          .then(res => res.blob())
-          .then(blob => {
-            const file = new File([blob], "garmonia.mp4", { type: "video/mp4" });
-            player.openFile(file);
-          });
-      });
-    });
-  </script>
+  <title>Webamp Player</title>
   <style>
-    body {
-      background-color: #008080;
+    html, body {
       margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      height: 100%;
       display: flex;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
+      align-items: center;
+    }
+    #app {
+      width: 500px;
+      height: 200px;
     }
   </style>
+  <script src="https://unpkg.com/webamp@latest/built/webamp.bundle.min.js"></script>
 </head>
 <body>
+  <div id="app"></div>
+
+  <script>
+    const tracks = [
+      {
+        url: './garmonia.mp3', // Или ссылка по сети
+        metaData: { artist: 'Polina', title: 'Garmonia' }
+      }
+    ];
+
+    const webamp = new Webamp({
+      initialTracks: tracks,
+      initialSkin: {
+        url: 'https://unpkg.com/webamp@latest/skins/base-2.91.wsz'
+      }
+    });
+
+    webamp.renderWhenReady(document.getElementById('app'));
+  </script>
 </body>
 </html>
