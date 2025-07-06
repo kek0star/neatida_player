@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Webamp Player</title>
+  <title>Neatida Player</title>
   <style>
     html, body {
       margin: 0;
@@ -28,14 +28,14 @@
     const tracks = [
       {
         url: './garmonia.mp3', // Или ссылка по сети
-        metaData: { artist: 'Polina', title: 'Garmonia' }
+        metaData: { artist: 'Neatida', title: 'Garmonia' }
       }
     ];
 
     const webamp = new Webamp({
       initialTracks: tracks,
       initialSkin: {
-        url: 'https://unpkg.com/webamp@latest/skins/base-2.91.wsz'
+        url: './neatida.wsz'
       }
     });
 
